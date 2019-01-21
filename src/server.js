@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Router } = require('express');
+const api = require('./routes/api');
 
 // Initialization
 const app = express();
@@ -14,16 +14,7 @@ app.use(bodyParser.json());
 
 
 // Manage the requests
-const router = Router();
-router.get(
-    '/',
-    (req, res) => {
-        console.log("Get route /");
-        //res.render('index');
-        res.send('Hello from server');
-    }
-);
-app.use('/api', router);
+app.use('/api', api);
 
 
 // Start the server 
