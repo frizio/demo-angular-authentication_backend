@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { Router } = require('express');
 
 // Initialization
 const app = express();
@@ -11,8 +12,10 @@ const port = app.get('port');
 // Form data manager Middleware
 app.use(bodyParser.json());
 
-// Manage the request
-app.get(
+
+// Manage the requests
+const router = Router();
+router.get(
     '/',
     (req, res) => {
         console.log("Get route /");
@@ -20,6 +23,7 @@ app.get(
         res.send('Hello from server');
     }
 );
+app.use('/api', router);
 
 
 // Start the server 
