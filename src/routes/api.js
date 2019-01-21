@@ -4,9 +4,13 @@ const mongoose = require("mongoose");
 const User = require('../models/user');
 
 const dbUrl = "mongodb://user:password@localhost:27017/test";
+const dbOptions = { 
+    useNewUrlParser: true
+};
 
 mongoose.connect(
     dbUrl,
+    dbOptions,
     (err) => {
         if (err) {
             console.log("There is an Error:\n" + err);
