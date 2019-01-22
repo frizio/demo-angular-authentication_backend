@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const mongoose = require("mongoose");
 const User = require('../models/user');
+const jwt = require("jsonwebtoken");
 
 const dbUrl = "mongodb://user:password@localhost:27017/test";
 const dbOptions = { 
@@ -21,6 +22,14 @@ mongoose.connect(
     }
 );
 
+const secretkey = "secretkey";
+
+function generateToken(id) {
+    console.log("Generate the JWT payload and token");
+    let payload = {subject: id};
+    let generatedToken = jwt.sign(payload, secretkey);
+    return { generatedToken } ;
+}
 
 
 router.get(
@@ -45,7 +54,8 @@ router.post(
                     console.log(err);
                 } else {
                     console.log("User registed correctly");
-                    res.status(200).send(registredUser);
+                    let token = generateToken(registredUser._id);
+                    res.status(200).send(token);
                 }
             }
         );
@@ -75,7 +85,8 @@ router.post(
                             res.status(401).send("Password invalid"); 
                         } else {
                             console.log("Login user in the system");
-                            res.status(200).send(user); 
+                            let token = generateToken(user._id);
+                            res.status(200).send(token); 
                         }
                     }
                 }
