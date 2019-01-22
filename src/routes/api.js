@@ -27,8 +27,8 @@ const secretkey = "secretkey";
 function generateToken(id) {
     console.log("Generate the JWT payload and token");
     let payload = {subject: id};
-    let generatedToken = jwt.sign(payload, secretkey);
-    return { generatedToken } ;
+    let token = jwt.sign(payload, secretkey);
+    return { token } ;
 }
 
 
