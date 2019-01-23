@@ -113,40 +113,41 @@ router.post(
 router.get(
     '/events', 
     (req,res) => {
+        console.log("Get route /events");
         let events = [
             {
                 "_id": "1",
-                "name": "Auto Expo 1",
+                "name": "Event 1",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "2",
-                "name": "Auto Expo 2",
+                "name": "Event 2",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "3",
-                "name": "Auto Expo 3",
+                "name": "Event 3",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "4",
-                "name": "Auto Expo 4",
+                "name": "Event 4",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "5",
-                "name": "Auto Expo 5",
+                "name": "Event 5",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "6",
-                "name": "Auto Expo 6",
+                "name": "Event 6",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             }
@@ -159,40 +160,41 @@ router.get(
     '/special', 
     verifyToken,
     (req,res) => {
+        console.log("Get route /special");
         let events = [
             {
                 "_id": "1",
-                "name": "Auto Expo special A",
+                "name": "Special Event A",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "2",
-                "name": "Auto Expo special B",
+                "name": "Special Event B",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "3",
-                "name": "Auto Expo special C",
+                "name": "Special Event C",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "4",
-                "name": "Auto Expo special D",
+                "name": "Special Event D",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "5",
-                "name": "Auto Expo special E",
+                "name": "Special Event E",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             },
             {
                 "_id": "6",
-                "name": "Auto Expo special F",
+                "name": "Special Event F",
                 "description": "lorem ipsum",
                 "date": "2012-04-23T18:25:43.511Z"
             }
