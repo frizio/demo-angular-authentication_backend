@@ -157,6 +157,7 @@ router.get(
 
 router.get(
     '/special', 
+    verifyToken,
     (req,res) => {
         let events = [
             {
